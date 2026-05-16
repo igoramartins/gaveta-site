@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gastos irregulares e como se preparar para eles — Gaveta Blog</title>
+<meta name="description" content="IPVA, IPTU, revisão do carro, presente de casamento. Esses gastos raramente são surpresa de verdade — o problema é que o dinheiro nunca está separado.">
+<link rel="canonical" href="https://gaveta.app/blog/gastos-irregulares-e-como-se-preparar/">
+<style>
+:root{--bl:#0047C0;--bl2:#0038A0;--bg:#09090B;--bg3:#18181B;--border:rgba(255,255,255,0.07);--t1:#FAFAFA;--t2:#A1A1AA;--t3:#52525B;--nav-bg:rgba(9,9,11,0.88);}
+@media(prefers-color-scheme:light){:root{--bg:#F4F3F0;--bg3:#FFFFFF;--border:rgba(0,0,0,0.07);--t1:#0D0D0D;--t2:#555550;--t3:#999890;--nav-bg:rgba(244,243,240,0.88);}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none}.logo span{color:var(--bl)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}.nav-link:hover{color:var(--t1)}
+.nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;}.nav-btn:hover{background:var(--bl2)}
+.post-wrap{max-width:720px;margin:0 auto;padding:72px 6% 96px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t3);margin-bottom:48px}
+.breadcrumb a{color:var(--t3);text-decoration:none}.breadcrumb a:hover{color:var(--t2)}
+.post-cat{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:block}
+.post-wrap h1{font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--t1);margin-bottom:32px}
+.post-lead{font-size:20px;color:var(--t2);line-height:1.75;font-weight:300;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.post-body{font-size:18px;color:var(--t2);line-height:1.8;font-weight:300}
+.post-body h2{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin:48px 0 16px;line-height:1.25}
+.post-body p{margin-bottom:24px}
+.post-body strong{color:var(--t1);font-weight:500}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:32px 0}
+.compare-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:24px}
+.compare-card h3{font-size:15px;font-weight:600;color:var(--t1);margin-bottom:10px}
+.compare-card p{font-size:15px;color:var(--t2);line-height:1.65;margin:0}
+.compare-card.highlight{border-color:rgba(0,71,192,0.4)}
+.duodecimo{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:28px;margin:32px 0}
+.duodecimo h3{font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:20px}
+.duo-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:16px}
+.duo-row:last-child{border-bottom:none;font-weight:500;padding-top:14px}
+.duo-label{color:var(--t2)}
+.duo-val{color:var(--t1);font-variant-numeric:tabular-nums}
+.duo-val.accent{color:var(--bl)}
+.callout{border:1px solid rgba(0,71,192,0.3);background:rgba(0,71,192,0.08);border-radius:16px;padding:24px 28px;margin:32px 0}
+.callout p{margin-bottom:0;color:var(--t1)}
+.checklist{display:flex;flex-direction:column;gap:12px;margin:32px 0}
+.check-item{display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--bg3);border:1px solid var(--border);border-radius:12px}
+.check-icon{width:24px;height:24px;border-radius:50%;background:rgba(0,71,192,0.15);border:1px solid rgba(0,71,192,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-icon svg{width:12px;height:12px;stroke:var(--bl);stroke-width:2.5;fill:none}
+.check-text{font-size:16px;color:var(--t2)}
+.post-cta{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:64px;text-align:center}
+.post-cta h3{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin-bottom:12px}
+.post-cta p{font-size:17px;color:var(--t2);font-weight:300;margin-bottom:28px}
+.post-cta a{background:var(--bl);color:white;padding:14px 28px;border-radius:100px;font-size:17px;font-weight:500;text-decoration:none;display:inline-block;}
+.post-cta a:hover{background:var(--bl2)}
+.nav-posts{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
+.nav-post{text-decoration:none;flex:1;padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;transition:border-color .2s}
+.nav-post:hover{border-color:rgba(0,71,192,0.4)}
+.nav-post-label{font-size:12px;color:var(--t3);margin-bottom:6px;display:block}
+.nav-post-title{font-size:15px;font-weight:500;color:var(--t1);line-height:1.4}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between}
+.fl{font-size:20px;font-weight:700;color:var(--t3)}.fl span{color:var(--bl)}
+.flinks{display:flex;gap:24px}.flinks a{font-size:17px;color:var(--t3);text-decoration:none}.flinks a:hover{color:var(--t2)}
+.fcopy{font-size:16px;color:var(--t3)}
+@media(max-width:768px){.nav-link{display:none}footer{flex-direction:column;gap:16px;text-align:center}.compare{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../" class="logo">Gaveta<span>.</span></a>
+  <div class="nav-r">
+    <a href="../../#como-funciona" class="nav-link">Como funciona</a>
+    <a href="../../#diferenca" class="nav-link">Diferenciais</a>
+    <a href="../../#pricing" class="nav-link">Planos</a>
+    <a href="../" class="nav-link">Blog</a>
+    <a href="../../" class="nav-btn">Testar beta</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <div class="breadcrumb">
+    <a href="../../">Gaveta</a> <span>›</span>
+    <a href="../">Blog</a> <span>›</span>
+    <span>Gastos irregulares e como se preparar</span>
+  </div>
+
+  <span class="post-cat">Planejamento</span>
+  <h1>Gastos irregulares e como se preparar para eles</h1>
+  <p class="post-lead">Todo mundo tem aquele mês em que aparece uma conta que "não estava no planejamento". O IPVA, a revisão do carro, o presente de casamento, o dentista, a matrícula escolar. Na maioria das vezes, esses gastos não são surpresa de verdade — você sabia que iam acontecer. O problema é que quando chegam, o dinheiro não está separado.</p>
+
+  <div class="post-body">
+
+    <h2>A diferença entre irregular e imprevisível</h2>
+    <p>É importante separar duas coisas que parecem iguais mas não são.</p>
+
+    <div class="compare">
+      <div class="compare-card highlight">
+        <h3>Gasto irregular</h3>
+        <p>Não acontece todo mês, mas é previsível. IPVA em março, festas de dezembro, material escolar em janeiro. A data pode variar, o valor exato também — mas a existência é certa.</p>
+      </div>
+      <div class="compare-card">
+        <h3>Gasto imprevisível</h3>
+        <p>O carro quebra sem aviso. Você fica doente. Um conserto urgente em casa. Esses são cobertos pela reserva de emergência — uma gaveta separada, com regras diferentes.</p>
+      </div>
+    </div>
+
+    <p>Confundir os dois é um erro comum. <strong>Gastos irregulares previsíveis não deveriam ser emergências</strong> — e com planejamento, não são.</p>
+
+    <h2>A estratégia do duodécimo</h2>
+    <p>O nome é técnico, mas a ideia é simples: <strong>divida o gasto anual por 12 e separe essa fração todo mês</strong>.</p>
+
+    <div class="duodecimo">
+      <h3>Exemplo — IPVA do carro</h3>
+      <div class="duo-row"><span class="duo-label">Valor anual do IPVA</span><span class="duo-val">R$ 1.800</span></div>
+      <div class="duo-row"><span class="duo-label">Valor mensal a reservar</span><span class="duo-val">R$ 150</span></div>
+      <div class="duo-row"><span class="duo-label">Em março, quando o boleto chega</span><span class="duo-val accent">R$ 1.800 já está na gaveta</span></div>
+    </div>
+
+    <p>O mesmo vale para qualquer gasto com frequência menor que mensal. IPTU, seguro, matrícula escolar, viagem de férias planejada, presentes de fim de ano. Tudo que você sabe que vai acontecer pode ser tratado dessa forma.</p>
+
+    <h2>Mapeando seus irregulares</h2>
+    <p>O primeiro passo é listar todos os gastos que não são mensais. Uma forma prática de fazer isso é passar pelo extrato do ano anterior mês a mês e anotar tudo que saiu fora do ritmo normal.</p>
+    <p>Para cada item, você precisa de três informações:</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <span class="check-text"><strong>Quanto custou</strong> — o valor do ano anterior como referência base</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <span class="check-text"><strong>Em qual mês aconteceu</strong> — para saber quando o dinheiro vai ser necessário</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <span class="check-text"><strong>Se tem chance de se repetir</strong> — para decidir se merece uma gaveta permanente</span>
+      </div>
+    </div>
+
+    <p>Com isso, você consegue estimar o valor mensal a reservar em cada gaveta. Não precisa ser perfeito. <strong>Uma estimativa razoável é muito melhor do que nenhuma previsão.</strong></p>
+
+    <h2>Quantas gavetas para irregulares</h2>
+    <p>Depende do volume e da importância de cada gasto. Alguns merecem gaveta própria — IPVA, IPTU e viagens costumam ter valor alto o suficiente para justificar visibilidade separada. Outros podem ser agrupados numa gaveta genérica de "gastos anuais" ou "fundo de surpresas planejadas".</p>
+    <p>A regra prática é a mesma das outras gavetas: se o valor é relevante e acontece todo ano, merece visibilidade própria. Se é pequeno e esporádico, pode entrar num agrupamento.</p>
+
+    <h2>O que fazer com o dinheiro acumulado</h2>
+    <p>Uma dúvida comum é onde fica o dinheiro enquanto a gaveta está enchendo. No Gaveta, ele fica registrado como saldo disponível naquela gaveta — você vê crescer mês a mês. Na prática financeira, esse dinheiro pode ficar numa conta separada ou num investimento de liquidez diária, como o Tesouro Selic ou um CDB de liquidez imediata.</p>
+    <p>O importante é que esteja disponível quando o gasto chegar — e que você <strong>não o confunda com dinheiro livre para gastar</strong>.</p>
+
+    <div class="callout">
+      <p>Quando você começa a tratar gastos irregulares dessa forma, o orçamento mensal fica mais previsível. Aquele mês de março que antes era pesado por causa do IPVA passa a ser igual a qualquer outro — o impacto já foi absorvido, R$ 150 por vez, sem dor.</p>
+    </div>
+
+  </div>
+
+  <div class="post-cta">
+    <h3>Planeje o ano inteiro no Gaveta</h3>
+    <p>Crie gavetas para seus gastos irregulares e acompanhe o acúmulo mês a mês.</p>
+    <a href="../../">Quero testar o Gaveta</a>
+  </div>
+
+  <div class="nav-posts">
+    <a href="../parcelamento-no-orcamento-por-envelope/" class="nav-post">
+      <span class="nav-post-label">← Anterior</span>
+      <div class="nav-post-title">Parcelamento no orçamento por envelope</div>
+    </a>
+    <div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">Gaveta<span>.</span></div>
+  <div class="flinks"><a href="../../">Home</a><a href="../">Blog</a><a href="../../#pricing">Planos</a></div>
+  <div class="fcopy">© 2025 Gaveta</div>
+</footer>
+</body>
+</html>

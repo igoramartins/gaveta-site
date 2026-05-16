@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como lidar com gastos variáveis — Gaveta Blog</title>
+<meta name="description" content="Gastos fixos são fáceis de planejar. O desafio real do orçamento por envelope está nos gastos variáveis — aqueles que mudam de valor todo mês.">
+<link rel="canonical" href="https://gaveta.app/blog/como-lidar-com-gastos-variaveis/">
+<style>
+:root{--bl:#0047C0;--bl2:#0038A0;--bg:#09090B;--bg2:#111113;--bg3:#18181B;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--t1:#FAFAFA;--t2:#A1A1AA;--t3:#52525B;--nav-bg:rgba(9,9,11,0.88);}
+@media(prefers-color-scheme:light){:root{--bg:#F4F3F0;--bg3:#FFFFFF;--border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.14);--t1:#0D0D0D;--t2:#555550;--t3:#999890;--nav-bg:rgba(244,243,240,0.88);}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none}.logo span{color:var(--bl)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}.nav-link:hover{color:var(--t1)}
+.nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background .15s}.nav-btn:hover{background:var(--bl2)}
+.post-wrap{max-width:720px;margin:0 auto;padding:72px 6% 96px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t3);margin-bottom:48px}
+.breadcrumb a{color:var(--t3);text-decoration:none}.breadcrumb a:hover{color:var(--t2)}
+.post-cat{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:block}
+.post-wrap h1{font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--t1);margin-bottom:32px}
+.post-lead{font-size:20px;color:var(--t2);line-height:1.75;font-weight:300;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.post-body{font-size:18px;color:var(--t2);line-height:1.8;font-weight:300}
+.post-body h2{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin:48px 0 16px;line-height:1.25}
+.post-body p{margin-bottom:24px}
+.post-body strong{color:var(--t1);font-weight:500}
+.three-opts{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:32px 0}
+.opt{background:var(--bg3);padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
+.opt-num{font-size:13px;font-weight:700;color:var(--bl);background:rgba(0,71,192,0.1);border:1px solid rgba(0,71,192,0.2);border-radius:6px;padding:4px 8px;flex-shrink:0;margin-top:2px}
+.opt-text{font-size:16px;color:var(--t2);line-height:1.6}
+.opt-text strong{color:var(--t1)}
+.example-box{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:24px;margin:32px 0}
+.example-box h3{font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:16px}
+.example-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:16px}
+.example-row:last-child{border-bottom:none;padding-top:14px;font-weight:500;color:var(--t1)}
+.example-label{color:var(--t2)}
+.example-val{font-variant-numeric:tabular-nums;color:var(--t1)}
+.callout{border:1px solid rgba(0,71,192,0.3);background:rgba(0,71,192,0.08);border-radius:16px;padding:24px 28px;margin:32px 0}
+.callout p{margin-bottom:0;color:var(--t1)}
+.post-cta{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:64px;text-align:center}
+.post-cta h3{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin-bottom:12px}
+.post-cta p{font-size:17px;color:var(--t2);font-weight:300;margin-bottom:28px}
+.post-cta a{background:var(--bl);color:white;padding:14px 28px;border-radius:100px;font-size:17px;font-weight:500;text-decoration:none;display:inline-block;transition:background .15s}
+.post-cta a:hover{background:var(--bl2)}
+.nav-posts{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
+.nav-post{text-decoration:none;flex:1;padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;transition:border-color .2s}
+.nav-post:hover{border-color:rgba(0,71,192,0.4)}
+.nav-post-label{font-size:12px;color:var(--t3);margin-bottom:6px;display:block}
+.nav-post-title{font-size:15px;font-weight:500;color:var(--t1);line-height:1.4}
+.nav-post.next{text-align:right}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between}
+.fl{font-size:20px;font-weight:700;color:var(--t3)}.fl span{color:var(--bl)}
+.flinks{display:flex;gap:24px}.flinks a{font-size:17px;color:var(--t3);text-decoration:none}.flinks a:hover{color:var(--t2)}
+.fcopy{font-size:16px;color:var(--t3)}
+@media(max-width:768px){.nav-link{display:none}footer{flex-direction:column;gap:16px;text-align:center}.nav-posts{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../" class="logo">Gaveta<span>.</span></a>
+  <div class="nav-r">
+    <a href="../../#como-funciona" class="nav-link">Como funciona</a>
+    <a href="../../#diferenca" class="nav-link">Diferenciais</a>
+    <a href="../../#pricing" class="nav-link">Planos</a>
+    <a href="../" class="nav-link">Blog</a>
+    <a href="../../" class="nav-btn">Testar beta</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <div class="breadcrumb">
+    <a href="../../">Gaveta</a> <span>›</span>
+    <a href="../">Blog</a> <span>›</span>
+    <span>Como lidar com gastos variáveis</span>
+  </div>
+
+  <span class="post-cat">Gestão</span>
+  <h1>Como lidar com gastos variáveis</h1>
+  <p class="post-lead">Gastos fixos são fáceis de planejar. Você sabe que o aluguel é R$ 1.500, coloca R$ 1.500 na gaveta e pronto. O desafio real do orçamento por envelope está nos gastos variáveis — aqueles que acontecem todo mês, mas nunca no mesmo valor.</p>
+
+  <div class="post-body">
+
+    <h2>Por que os variáveis são o ponto crítico</h2>
+    <p>A alimentação é o exemplo mais comum. Num mês você gasta R$ 800 no mercado, no outro gasta R$ 1.050 porque teve churrasco, festa em casa e a carne subiu. O transporte varia com o preço do combustível. A farmácia varia com a saúde de todo mundo em casa. Esses gastos têm um padrão, mas nunca são exatos.</p>
+    <p>O problema é que, sem um limite definido, os variáveis tendem a <strong>crescer silenciosamente</strong>. Você não percebe porque cada compra individual parece razoável. O desvio aparece só no total — e já é tarde.</p>
+
+    <h2>A lógica do teto</h2>
+    <p>A gaveta variável funciona como um <strong>teto, não como uma previsão exata</strong>. Você não está tentando adivinhar o valor perfeito — está definindo o máximo que aquela categoria pode consumir no mês.</p>
+    <p>Isso muda a relação com o gasto. Quando você vai ao mercado e a gaveta de alimentação tem R$ 420 restantes, você sabe que tem R$ 420 disponíveis — não mais. Se precisar de mais, a decisão de mover dinheiro de outra gaveta é consciente e deliberada.</p>
+
+    <h2>Como definir o valor certo</h2>
+    <p>O ponto de partida é a <strong>média dos últimos três meses</strong>. Some os gastos da categoria nos três meses e divida por três. Esse é o seu valor base.</p>
+    <p>Depois ajuste com uma margem de segurança pequena — em torno de <strong>10 a 15% acima da média</strong>. Não para gastar mais, mas para absorver variações normais sem precisar realocar toda semana.</p>
+
+    <div class="example-box">
+      <h3>Exemplo — Alimentação</h3>
+      <div class="example-row"><span class="example-label">Mês 1</span><span class="example-val">R$ 780</span></div>
+      <div class="example-row"><span class="example-label">Mês 2</span><span class="example-val">R$ 830</span></div>
+      <div class="example-row"><span class="example-label">Mês 3</span><span class="example-val">R$ 850</span></div>
+      <div class="example-row"><span class="example-label">Média</span><span class="example-val">R$ 820</span></div>
+      <div class="example-row"><span class="example-label">Gaveta recomendada (+10%)</span><span class="example-val">R$ 900</span></div>
+    </div>
+
+    <h2>O que fazer quando a gaveta esgota antes do mês acabar</h2>
+    <p>Isso vai acontecer — especialmente nos primeiros meses. E é exatamente aí que o método mostra seu valor.</p>
+
+    <div class="three-opts">
+      <div class="opt">
+        <span class="opt-num">1</span>
+        <span class="opt-text"><strong>Mover dinheiro de outra gaveta</strong> que ainda tem saldo. Decisão consciente e rastreável.</span>
+      </div>
+      <div class="opt">
+        <span class="opt-num">2</span>
+        <span class="opt-text"><strong>Cortar gastos no restante do mês</strong> naquela categoria. Você sabe que o limite foi atingido.</span>
+      </div>
+      <div class="opt">
+        <span class="opt-num">3</span>
+        <span class="opt-text"><strong>Aceitar o estouro e ajustar o valor</strong> da gaveta no mês seguinte com base no que aconteceu.</span>
+      </div>
+    </div>
+
+    <p>Nenhuma das três é errada. O que importa é que a decisão é consciente. Você sabe que está estourando a gaveta, sabe de onde veio o dinheiro extra, e pode aprender com isso para o próximo mês.</p>
+
+    <h2>O que fazer quando sobra</h2>
+    <p>Sobra também é informação. Se a gaveta de lazer consistentemente termina o mês com R$ 150 sobrando, você tem duas opções: reduzir o valor alocado e redirecionar para outra gaveta — ou reserva de emergência — ou manter e aceitar que aquela folga faz parte do seu estilo de vida.</p>
+    <p>Ambas são válidas. O importante é não deixar as sobras acumularem sem decisão. <strong>Dinheiro parado numa gaveta sem propósito é dinheiro que poderia estar trabalhando em outro lugar.</strong></p>
+
+    <h2>Gastos variáveis sazonais</h2>
+    <p>Alguns variáveis têm picos previsíveis. Alimentação sobe em dezembro. Energia elétrica sobe no verão. Saúde tende a pesar mais no inverno. Vestuário aparece na troca de estação.</p>
+
+    <div class="callout">
+      <p><strong>Estratégia de antecipação:</strong> Se em dezembro a alimentação costuma custar R$ 400 a mais, você pode alocar R$ 100 extras por mês de setembro a novembro. Quando dezembro chegar, o dinheiro já está lá.</p>
+    </div>
+
+    <h2>O ajuste mês a mês</h2>
+    <p>Os primeiros três meses de orçamento por envelope raramente refletem o equilíbrio real. Você vai descobrir categorias que subestimou, outras que superestimou, e algumas que nem existiam no seu planejamento inicial.</p>
+    <p>Esse período de ajuste é parte do processo. Cada mês que passa, o orçamento fica mais preciso — porque está baseado em dados reais do seu comportamento, não em suposições.</p>
+
+  </div>
+
+  <div class="post-cta">
+    <h3>Acompanhe seus variáveis em tempo real</h3>
+    <p>No Gaveta você vê o saldo de cada gaveta atualizar a cada transação.</p>
+    <a href="../../">Quero testar o Gaveta</a>
+  </div>
+
+  <div class="nav-posts">
+    <a href="../como-definir-suas-gavetas/" class="nav-post">
+      <span class="nav-post-label">← Anterior</span>
+      <div class="nav-post-title">Como definir suas gavetas</div>
+    </a>
+    <a href="../parcelamento-no-orcamento-por-envelope/" class="nav-post next">
+      <span class="nav-post-label">Próximo →</span>
+      <div class="nav-post-title">Parcelamento no orçamento por envelope</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">Gaveta<span>.</span></div>
+  <div class="flinks"><a href="../../">Home</a><a href="../">Blog</a><a href="../../#pricing">Planos</a></div>
+  <div class="fcopy">© 2025 Gaveta</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como definir suas gavetas — Gaveta Blog</title>
+<meta name="description" content="Criar gavetas é a parte mais pessoal do orçamento por envelope. Não existe uma lista certa para todo mundo — mas existe uma lógica para montar a sua.">
+<link rel="canonical" href="https://gaveta.app/blog/como-definir-suas-gavetas/">
+<style>
+:root{
+  --bl:#0047C0;--bl2:#0038A0;--ok:#00E5A0;
+  --bg:#09090B;--bg2:#111113;--bg3:#18181B;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --t1:#FAFAFA;--t2:#A1A1AA;--t3:#52525B;
+  --nav-bg:rgba(9,9,11,0.88);
+}
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#F4F3F0;--bg2:#ECEAE6;--bg3:#FFFFFF;
+    --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.14);
+    --t1:#0D0D0D;--t2:#555550;--t3:#999890;
+    --nav-bg:rgba(244,243,240,0.88);
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none}
+.logo span{color:var(--bl)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}
+.nav-link:hover{color:var(--t1)}
+.nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background .15s}
+.nav-btn:hover{background:var(--bl2)}
+.post-wrap{max-width:720px;margin:0 auto;padding:72px 6% 96px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t3);margin-bottom:48px}
+.breadcrumb a{color:var(--t3);text-decoration:none}
+.breadcrumb a:hover{color:var(--t2)}
+.post-cat{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:block}
+.post-wrap h1{font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--t1);margin-bottom:32px}
+.post-lead{font-size:20px;color:var(--t2);line-height:1.75;font-weight:300;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.post-body{font-size:18px;color:var(--t2);line-height:1.8;font-weight:300}
+.post-body h2{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin:48px 0 16px;line-height:1.25}
+.post-body p{margin-bottom:24px}
+.post-body strong{color:var(--t1);font-weight:500}
+.post-body ul{margin:0 0 24px 0;padding-left:0;list-style:none}
+.post-body li{padding:10px 0 10px 24px;border-bottom:1px solid var(--border);position:relative;font-size:17px;color:var(--t2)}
+.post-body li:last-child{border-bottom:none}
+.post-body li::before{content:'';position:absolute;left:0;top:19px;width:8px;height:2px;background:var(--bl)}
+.post-body li strong{color:var(--t1)}
+.three-types{display:grid;gap:12px;margin:32px 0}
+.type-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:24px;border-left:3px solid var(--bl)}
+.type-card h3{font-size:17px;font-weight:600;color:var(--t1);margin-bottom:8px}
+.type-card p{font-size:16px;color:var(--t2);line-height:1.65;margin:0}
+.callout{border:1px solid rgba(0,71,192,0.3);background:rgba(0,71,192,0.08);border-radius:16px;padding:24px 28px;margin:32px 0}
+.callout p{margin-bottom:0;color:var(--t1)}
+.post-cta{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:64px;text-align:center}
+.post-cta h3{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin-bottom:12px}
+.post-cta p{font-size:17px;color:var(--t2);font-weight:300;margin-bottom:28px}
+.post-cta a{background:var(--bl);color:white;padding:14px 28px;border-radius:100px;font-size:17px;font-weight:500;text-decoration:none;display:inline-block;transition:background .15s}
+.post-cta a:hover{background:var(--bl2)}
+.nav-posts{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
+.nav-post{text-decoration:none;flex:1;padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;transition:border-color .2s}
+.nav-post:hover{border-color:rgba(0,71,192,0.4)}
+.nav-post-label{font-size:12px;color:var(--t3);margin-bottom:6px;display:block}
+.nav-post-title{font-size:15px;font-weight:500;color:var(--t1);line-height:1.4}
+.nav-post.next{text-align:right}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between}
+.fl{font-size:20px;font-weight:700;color:var(--t3)}.fl span{color:var(--bl)}
+.flinks{display:flex;gap:24px}
+.flinks a{font-size:17px;color:var(--t3);text-decoration:none}
+.flinks a:hover{color:var(--t2)}
+.fcopy{font-size:16px;color:var(--t3)}
+@media(max-width:768px){.nav-link{display:none}footer{flex-direction:column;gap:16px;text-align:center}.nav-posts{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../" class="logo">Gaveta<span>.</span></a>
+  <div class="nav-r">
+    <a href="../../#como-funciona" class="nav-link">Como funciona</a>
+    <a href="../../#diferenca" class="nav-link">Diferenciais</a>
+    <a href="../../#pricing" class="nav-link">Planos</a>
+    <a href="../" class="nav-link">Blog</a>
+    <a href="../../" class="nav-btn">Testar beta</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <div class="breadcrumb">
+    <a href="../../">Gaveta</a> <span>›</span>
+    <a href="../">Blog</a> <span>›</span>
+    <span>Como definir suas gavetas</span>
+  </div>
+
+  <span class="post-cat">Configuração</span>
+  <h1>Como definir suas gavetas</h1>
+  <p class="post-lead">Criar gavetas é a parte mais pessoal do orçamento por envelope. Não existe uma lista certa que funcione para todo mundo — o que existe é uma lógica para montar a sua.</p>
+
+  <div class="post-body">
+
+    <h2>Comece pelo que já acontece, não pelo que deveria acontecer</h2>
+    <p>O erro mais comum na hora de criar gavetas é inventar categorias ideais. Você cria uma gaveta de "academia", mas nunca vai à academia. Cria uma gaveta de "livros", mas compra livros duas vezes por ano. Essas gavetas ficam paradas — e pior, criam a sensação de que você está controlando coisas que na prática não estão acontecendo.</p>
+    <p>O ponto de partida certo é o <strong>extrato dos últimos dois ou três meses</strong>. Olhe para o que você realmente gastou e agrupe por tipo. Os grupos que aparecem todo mês são os candidatos naturais a virar gaveta.</p>
+
+    <h2>Quanto ao número de gavetas</h2>
+    <p>Não existe um número certo, mas existe um número errado: <strong>gavetas demais</strong>. Quando o orçamento tem 30 categorias, manter tudo atualizado vira um trabalho. A regra prática é: se uma categoria representa menos de 2% da sua renda, ela provavelmente não precisa de uma gaveta própria — pode entrar em "outros" ou ser agrupada com algo relacionado.</p>
+    <p>Para a maioria das pessoas, <strong>entre 8 e 14 gavetas</strong> já cobre bem a vida financeira. É o suficiente para ter visibilidade sem virar burocracia.</p>
+
+    <h2>Três tipos de gasto para ter em mente</h2>
+
+    <div class="three-types">
+      <div class="type-card">
+        <h3>Gastos fixos</h3>
+        <p>Valores que não mudam de mês para mês. Aluguel, financiamento, plano de saúde, mensalidade escolar. São os mais fáceis de transformar em gaveta porque o valor já é conhecido.</p>
+      </div>
+      <div class="type-card">
+        <h3>Gastos variáveis recorrentes</h3>
+        <p>Acontecem todo mês, mas o valor muda. Alimentação, transporte, conta de luz, farmácia. O extrato dos últimos meses ajuda a estimar um valor médio para alocar.</p>
+      </div>
+      <div class="type-card">
+        <h3>Gastos irregulares</h3>
+        <p>Não acontecem todo mês, mas são previsíveis. IPTU, IPVA, presente de aniversário, revisão do carro. A solução é alimentar a gaveta todo mês com uma fração do valor anual.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Exemplo prático:</strong> se o IPVA do seu carro custa R$ 1.200 por ano, você coloca R$ 100 por mês na gaveta de IPVA. Quando o boleto chegar, o dinheiro já está lá.</p>
+    </div>
+
+    <h2>Nomes que fazem sentido para você</h2>
+    <p>O nome da gaveta importa mais do que parece. Nomes genéricos como "categoria 3" ou "despesas diversas" não dizem nada. Nomes específicos como "mercado", "farmácia" ou "streaming" tornam a decisão de gasto mais concreta — você sabe exatamente de onde o dinheiro está saindo. Não precisa ser sofisticado. Precisa ser claro.</p>
+
+    <h2>Um ponto de partida razoável</h2>
+    <p>Para quem está começando, estas gavetas costumam cobrir bem a maior parte da vida financeira:</p>
+    <ul>
+      <li><strong>Moradia</strong> — aluguel ou financiamento, condomínio, IPTU</li>
+      <li><strong>Alimentação</strong> — mercado, feira, açougue</li>
+      <li><strong>Refeições fora</strong> — restaurante, delivery, lanchonete</li>
+      <li><strong>Transporte</strong> — combustível, Uber, transporte público, manutenção</li>
+      <li><strong>Saúde</strong> — plano, farmácia, consultas</li>
+      <li><strong>Lazer e assinaturas</strong> — streaming, academia, hobbies</li>
+      <li><strong>Vestuário</strong> — roupas, calçados</li>
+      <li><strong>Gastos irregulares</strong> — um fundo para o que aparece fora do roteiro</li>
+      <li><strong>Reserva de emergência</strong> — separado do restante, intocável no dia a dia</li>
+    </ul>
+    <p>A divisão entre "alimentação" e "refeições fora" é intencional. Para muitas pessoas, comer fora é o gasto que mais cresce sem perceber — ter visibilidade separada ajuda.</p>
+
+    <h2>Revise no fim do primeiro mês</h2>
+    <p>As gavetas do primeiro mês raramente são as definitivas. Você vai descobrir que esqueceu de uma categoria, que outra ficou grande demais, ou que duas podem ser unidas sem perda de controle.</p>
+    <p>Isso é normal. O orçamento por envelope é um processo de ajuste contínuo — especialmente no começo. O objetivo não é acertar tudo de cara, é criar um sistema que te dê <strong>informação real sobre onde seu dinheiro vai</strong>.</p>
+
+  </div>
+
+  <div class="post-cta">
+    <h3>Monte suas gavetas no Gaveta</h3>
+    <p>O app já sugere gavetas iniciais no onboarding — e você ajusta conforme a sua realidade.</p>
+    <a href="../../">Quero testar o Gaveta</a>
+  </div>
+
+  <div class="nav-posts">
+    <a href="../o-que-e-orcamento-por-envelope/" class="nav-post">
+      <span class="nav-post-label">← Anterior</span>
+      <div class="nav-post-title">O que é orçamento por envelope</div>
+    </a>
+    <a href="../como-lidar-com-gastos-variaveis/" class="nav-post next">
+      <span class="nav-post-label">Próximo →</span>
+      <div class="nav-post-title">Como lidar com gastos variáveis</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">Gaveta<span>.</span></div>
+  <div class="flinks"><a href="../../">Home</a><a href="../">Blog</a><a href="../../#pricing">Planos</a></div>
+  <div class="fcopy">© 2025 Gaveta</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+# Gaveta — App de Orçamento Pessoal para Brasileiros
+
+## Sobre
+
+Gaveta é um aplicativo de controle financeiro pessoal para iOS desenvolvido no Brasil, para o mercado brasileiro. Usa o modelo de orçamento por envelopes (envelope budgeting), onde cada real recebido é alocado antecipadamente em "gavetas" (categorias de gasto) antes de ser gasto. O nome vem da metáfora de guardar dinheiro em gavetas separadas para cada finalidade.
+
+Diferente de apps estrangeiros como YNAB, o Gaveta foi construído do zero para a realidade financeira brasileira: parcelamento no cartão de crédito, benefícios VA/VR, múltiplas contas simultâneas e cultura de pagamento em parcelas.
+
+## Funcionalidades Principais
+
+- **Gavetas (envelopes):** O usuário cria gavetas para cada categoria de gasto (Casa, Carro, Alimentação, Lazer, etc.) e aloca o dinheiro disponível entre elas antes de gastar. O saldo de cada gaveta mostra quanto ainda pode ser gasto naquele mês.
+- **Suporte nativo a parcelamento:** Ao registrar uma compra parcelada, o app distribui automaticamente cada parcela no mês de faturamento correto, usando a data de fechamento do cartão. Nenhum outro app brasileiro faz isso nativamente.
+- **Contas VA/VR com restrições por tipo:** Cartões de benefício (Vale Alimentação, Vale Refeição) só podem ser usados em gavetas do tipo "Alimentação" ou "Refeição". O app bloqueia automaticamente alocações incorretas.
+- **Limite pessoal de cartão de crédito:** Separado do limite do banco. O usuário define o quanto quer se permitir gastar no crédito, independente do limite liberado pela operadora.
+- **Projeção de renda futura:** Visualização de quanto dinheiro entrará nos próximos meses com base em receitas recorrentes cadastradas.
+- **Conta de Dívida:** Tipo especial de conta para empréstimos e financiamentos. O usuário cadastra saldo devedor, valor da parcela mensal e número de parcelas restantes. O app abate automaticamente a cada pagamento e exibe quando a dívida será quitada.
+- **Modo Privacidade:** Oculta todos os valores monetários da tela com um toque. Útil em ambientes públicos ou transportes.
+- **Orçamento Compartilhado (Pro):** Dois usuários (casal, por exemplo) acessam e editam o mesmo orçamento em tempo real via sincronização na nuvem.
+- **Máquina do Tempo (Pro):** Simulador que responde: "se eu comprar X parcelado em N vezes, meus envelopes dos próximos meses vão ficar no vermelho?" Mostra o impacto de uma compra futura antes de fazê-la.
+- **Relatórios Avançados e Exportação CSV (Pro):** Gráficos de tendência por gaveta nos últimos 12 meses e exportação completa de transações.
+
+## Planos e Preços
+
+**Plano Gratuito:**
+- Gavetas ilimitadas
+- Categorias ilimitadas
+- Contas ilimitadas
+- 1 orçamento
+- Modo Privacidade
+- Anúncios não intrusivos
+
+**Plano Pro:**
+- R$ 11,90 por mês
+- R$ 119,90 por ano (equivale a 2 meses grátis)
+- Sem anúncios
+- Orçamento Compartilhado (casal/família)
+- Máquina do Tempo (simulador de parcelamento)
+- Relatórios Avançados
+- Exportação CSV
+
+**Beta:** Testadores beta recebem 1 ano de Pro gratuito.
+
+## Plataformas
+
+- iOS (iPhone) — disponível na App Store
+- Android: previsto
+- Web: em desenvolvimento
+
+## Público-Alvo
+
+- Brasileiros que querem controlar gastos e parar de ficar no negativo
+- Pessoas que parcelam compras frequentemente e perdem o controle das faturas futuras
+- Casais que querem gerenciar o orçamento familiar juntos
+- Trabalhadores com cartão VA/VR que precisam controlar os benefícios separadamente
+- Quem tem dívidas (empréstimos, financiamentos) e quer acompanhar o progresso de pagamento
+- Quem já tentou YNAB ou outros apps internacionais e achou que não se adaptava à realidade brasileira
+
+## Diferenciais em Relação a Outros Apps
+
+- **vs. YNAB:** YNAB não suporta parcelamento brasileiro, não tem VA/VR, não tem versão em português nativa. Gaveta foi construído para o Brasil.
+- **vs. Mobills, Organizze, Guiabolso:** Esses apps são rastreadores de gastos (você lança o que já gastou). Gaveta é um orçamento proativo: você aloca o dinheiro antes de gastar, o que muda o comportamento financeiro.
+- **vs. planilhas:** Gaveta é tão estruturado quanto uma planilha mas acessível no celular, com sincronização automática e interface otimizada para uso diário.
+- **Parcelamento nativo:** Nenhum app concorrente no Brasil distribui parcelas automaticamente pelos meses de faturamento corretos com base no fechamento do cartão.
+
+## Contato e Links
+
+- Website: https://gaveta.app
+- Cadastro para beta: https://gaveta.app (formulário na página principal)
+- Desenvolvido em: Belo Horizonte, MG, Brasil
+
+## Perguntas Frequentes
+
+**Qual o melhor app de controle financeiro para brasileiros?**
+Gaveta é um aplicativo de orçamento por envelopes desenvolvido especificamente para o mercado brasileiro, com suporte nativo a parcelamento no cartão de crédito, benefícios VA/VR e orçamento compartilhado para casais.
+
+**Como funciona o orçamento por envelopes?**
+Você recebe seu salário, distribui o valor entre gavetas (envelopes) antes de gastar — Casa, Carro, Alimentação, Lazer — e só pode gastar o que está em cada gaveta. Quando a gaveta acaba, acabou. Isso cria consciência de onde o dinheiro vai antes de ele ir embora.
+
+**O Gaveta suporta compras parceladas?**
+Sim. É o principal diferencial do app. Ao registrar uma compra parcelada, o Gaveta calcula automaticamente em qual mês de faturamento cada parcela cai, usando a data de fechamento do seu cartão. Você vê o impacto das parcelas futuras antes de ser surpreendido pela fatura.
+
+**Como usar cartão VA/VR no Gaveta?**
+O Gaveta tem suporte a contas de benefício. Você cadastra seu cartão VA ou VR e define quais gavetas podem receber gastos dessas contas — por exemplo, apenas gavetas do tipo "Alimentação" para o VA. O app bloqueia automaticamente tentativas de usar o benefício fora da categoria correta.
+
+**O Gaveta funciona para casais?**
+Sim, com o plano Pro o casal compartilha o mesmo orçamento em tempo real. Qualquer lançamento feito por um aparece imediatamente para o outro.
+
+**Como o Gaveta ajuda a pagar dívidas?**
+O app tem um tipo especial de conta chamado "Conta de Dívida". Você cadastra empréstimos e financiamentos com saldo devedor, valor da parcela e número de parcelas restantes. O app acompanha o progresso e mostra quando a dívida vai ser quitada.
+
+**O Gaveta é gratuito?**
+O plano gratuito inclui gavetas ilimitadas, contas ilimitadas e modo privacidade, com anúncios não intrusivos. O plano Pro custa R$ 11,90/mês ou R$ 119,90/ano e adiciona orçamento compartilhado, simulador de parcelamento, relatórios avançados e exportação CSV.
+
+**O que é a Máquina do Tempo?**
+É um simulador exclusivo do plano Pro. Você informa uma compra que está considerando fazer (valor, número de parcelas, cartão, data) e o app mostra o impacto nas suas gavetas nos próximos meses — se alguma vai ficar no vermelho com a parcela adicional. Você decide se a compra cabe no orçamento antes de fazê-la.
+
+**O Gaveta está disponível para Android?**
+Atualmente o Gaveta está disponível para iOS. A versão Android está prevista.
+
+**Como entrar no beta do Gaveta?**
+Acesse gaveta.app e preencha o formulário com seu nome e e-mail. Testadores beta recebem 1 ano do plano Pro gratuitamente.

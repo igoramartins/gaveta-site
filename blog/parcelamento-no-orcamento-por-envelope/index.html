@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parcelamento no orçamento por envelope — Gaveta Blog</title>
+<meta name="description" content="O parcelamento é uma das formas de consumo mais comuns no Brasil — e uma das que mais confunde na hora de fazer orçamento. Entenda como tratar corretamente.">
+<link rel="canonical" href="https://gaveta.app/blog/parcelamento-no-orcamento-por-envelope/">
+<style>
+:root{--bl:#0047C0;--bl2:#0038A0;--bg:#09090B;--bg3:#18181B;--border:rgba(255,255,255,0.07);--t1:#FAFAFA;--t2:#A1A1AA;--t3:#52525B;--nav-bg:rgba(9,9,11,0.88);}
+@media(prefers-color-scheme:light){:root{--bg:#F4F3F0;--bg3:#FFFFFF;--border:rgba(0,0,0,0.07);--t1:#0D0D0D;--t2:#555550;--t3:#999890;--nav-bg:rgba(244,243,240,0.88);}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none}.logo span{color:var(--bl)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}.nav-link:hover{color:var(--t1)}
+.nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;}.nav-btn:hover{background:var(--bl2)}
+.post-wrap{max-width:720px;margin:0 auto;padding:72px 6% 96px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t3);margin-bottom:48px}
+.breadcrumb a{color:var(--t3);text-decoration:none}.breadcrumb a:hover{color:var(--t2)}
+.post-cat{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:block}
+.post-wrap h1{font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--t1);margin-bottom:32px}
+.post-lead{font-size:20px;color:var(--t2);line-height:1.75;font-weight:300;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.post-body{font-size:18px;color:var(--t2);line-height:1.8;font-weight:300}
+.post-body h2{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin:48px 0 16px;line-height:1.25}
+.post-body p{margin-bottom:24px}
+.post-body strong{color:var(--t1);font-weight:500}
+.timeline{margin:32px 0;display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px;position:relative}
+.tl-item::before{content:'';position:absolute;left:15px;top:40px;bottom:-1px;width:1px;background:var(--border)}
+.tl-item:last-child::before{display:none}
+.tl-dot{width:30px;height:30px;border-radius:50%;background:rgba(0,71,192,0.15);border:1px solid rgba(0,71,192,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--bl);flex-shrink:0;margin-top:14px}
+.tl-body{padding:12px 0 28px}
+.tl-month{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--bl);margin-bottom:4px}
+.tl-desc{font-size:16px;color:var(--t2)}
+.callout{border:1px solid rgba(0,71,192,0.3);background:rgba(0,71,192,0.08);border-radius:16px;padding:24px 28px;margin:32px 0}
+.callout p{margin-bottom:0;color:var(--t1)}
+.warn-box{border:1px solid rgba(255,59,92,0.3);background:rgba(255,59,92,0.06);border-radius:16px;padding:24px 28px;margin:32px 0}
+.warn-box p{margin-bottom:0;color:var(--t1)}
+.post-cta{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:64px;text-align:center}
+.post-cta h3{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin-bottom:12px}
+.post-cta p{font-size:17px;color:var(--t2);font-weight:300;margin-bottom:28px}
+.post-cta a{background:var(--bl);color:white;padding:14px 28px;border-radius:100px;font-size:17px;font-weight:500;text-decoration:none;display:inline-block;}
+.post-cta a:hover{background:var(--bl2)}
+.nav-posts{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
+.nav-post{text-decoration:none;flex:1;padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;transition:border-color .2s}
+.nav-post:hover{border-color:rgba(0,71,192,0.4)}
+.nav-post-label{font-size:12px;color:var(--t3);margin-bottom:6px;display:block}
+.nav-post-title{font-size:15px;font-weight:500;color:var(--t1);line-height:1.4}
+.nav-post.next{text-align:right}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between}
+.fl{font-size:20px;font-weight:700;color:var(--t3)}.fl span{color:var(--bl)}
+.flinks{display:flex;gap:24px}.flinks a{font-size:17px;color:var(--t3);text-decoration:none}.flinks a:hover{color:var(--t2)}
+.fcopy{font-size:16px;color:var(--t3)}
+@media(max-width:768px){.nav-link{display:none}footer{flex-direction:column;gap:16px;text-align:center}.nav-posts{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../" class="logo">Gaveta<span>.</span></a>
+  <div class="nav-r">
+    <a href="../../#como-funciona" class="nav-link">Como funciona</a>
+    <a href="../../#diferenca" class="nav-link">Diferenciais</a>
+    <a href="../../#pricing" class="nav-link">Planos</a>
+    <a href="../" class="nav-link">Blog</a>
+    <a href="../../" class="nav-btn">Testar beta</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <div class="breadcrumb">
+    <a href="../../">Gaveta</a> <span>›</span>
+    <a href="../">Blog</a> <span>›</span>
+    <span>Parcelamento no orçamento por envelope</span>
+  </div>
+
+  <span class="post-cat">Parcelamento</span>
+  <h1>Parcelamento no orçamento por envelope</h1>
+  <p class="post-lead">O parcelamento é uma das formas de consumo mais comuns no Brasil — e uma das que mais confunde na hora de fazer orçamento. Entender como encaixar as parcelas no método de envelope faz toda a diferença entre um orçamento que funciona e um que sempre parece errado.</p>
+
+  <div class="post-body">
+
+    <h2>O problema do parcelamento invisível</h2>
+    <p>Quando você parcela uma compra em 10 vezes, o impacto no seu orçamento não acontece uma vez — acontece dez vezes, ao longo de dez meses. O problema é que a maioria das pessoas registra só a compra original e perde o rastro das parcelas futuras.</p>
+    <p>O resultado é um orçamento que parece equilibrado no papel, mas que na prática tem <strong>compromissos futuros invisíveis</strong>. Quando a fatura do cartão chega, o valor surpreende — mesmo que você se lembre da compra.</p>
+
+    <h2>A lógica correta</h2>
+    <p>O parcelamento precisa ser tratado como o que é: um compromisso distribuído no tempo. Cada parcela é um gasto real, num mês real, que precisa ter dinheiro alocado.</p>
+    <p>Isso significa que ao registrar uma compra parcelada, o orçamento precisa enxergar não só a parcela de hoje, mas todas as parcelas futuras — e reservar espaço para elas nos meses correspondentes.</p>
+
+    <h2>Mês de competência vs. mês de pagamento</h2>
+    <p>Aqui entra um conceito importante: a diferença entre o mês em que a compra aconteceu e o mês em que ela vai ser cobrada na fatura.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">1</div>
+        <div class="tl-body">
+          <div class="tl-month">Compra no dia 10 de janeiro</div>
+          <div class="tl-desc">Fechamento do cartão é dia 20 → vai para a fatura de janeiro, paga em fevereiro.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-body">
+          <div class="tl-month">Compra no dia 25 de janeiro</div>
+          <div class="tl-desc">Depois do fechamento dia 20 → vai para a fatura de fevereiro, paga em março.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Ignorar essa diferença cria distorções no orçamento. Você aloca o dinheiro no mês errado e fica sem saber por que os números não fecham.</p>
+    </div>
+
+    <h2>Como o Gaveta resolve isso</h2>
+    <p>O Gaveta foi construído para entender parcelamento nativamente. Quando você registra uma compra parcelada, informa o valor total, o número de parcelas e a data da compra. O app calcula automaticamente em quais meses de faturamento cada parcela vai cair — levando em conta o fechamento do cartão — e aloca o impacto nos meses corretos.</p>
+    <p>Você não precisa fazer esse cálculo manualmente nem criar uma entrada para cada parcela. O app distribui tudo e você vê, mês a mês, quanto está comprometido com parcelamentos futuros.</p>
+
+    <h2>Parcelamento e gavetas</h2>
+    <p>Cada parcela precisa sair de alguma gaveta. Se você parcelou uma TV em 12 vezes de R$ 250, esses R$ 250 precisam estar alocados na gaveta de eletrônicos — ou na gaveta que fizer sentido para aquele gasto — em cada um dos 12 meses.</p>
+    <p>Isso tem uma implicação importante: <strong>antes de parcelar algo, vale perguntar se a gaveta correspondente vai comportar aquela parcela nos próximos meses</strong>. Não só agora, mas por todo o período do parcelamento. A Máquina do Tempo do Gaveta existe exatamente para isso — você simula a compra antes de fazê-la e vê se alguma gaveta vai ficar no vermelho nos meses seguintes.</p>
+
+    <h2>Parcelamento não é dívida ruim — mas precisa de controle</h2>
+    <p>Parcelar não é necessariamente um problema. Em muitos casos faz sentido financeiro distribuir um gasto grande ao longo do tempo, especialmente quando a compra é planejada e o valor da parcela cabe no orçamento com folga.</p>
+
+    <div class="warn-box">
+      <p><strong>O problema está no parcelamento acumulado</strong> — quando você tem dez compras parceladas simultâneas e não sabe ao certo quanto do seu salário já está comprometido antes do mês começar.</p>
+    </div>
+
+    <p>Com o método de envelope, esse número fica visível. Você sabe exatamente quanto de cada gaveta já está reservado para parcelas existentes — e quanto de fato sobrou para novos gastos.</p>
+
+  </div>
+
+  <div class="post-cta">
+    <h3>Parcelamento sem surpresa</h3>
+    <p>O Gaveta distribui automaticamente as parcelas nos meses de faturamento corretos.</p>
+    <a href="../../">Quero testar o Gaveta</a>
+  </div>
+
+  <div class="nav-posts">
+    <a href="../como-lidar-com-gastos-variaveis/" class="nav-post">
+      <span class="nav-post-label">← Anterior</span>
+      <div class="nav-post-title">Como lidar com gastos variáveis</div>
+    </a>
+    <a href="../gastos-irregulares-e-como-se-preparar/" class="nav-post next">
+      <span class="nav-post-label">Próximo →</span>
+      <div class="nav-post-title">Gastos irregulares e como se preparar</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">Gaveta<span>.</span></div>
+  <div class="flinks"><a href="../../">Home</a><a href="../">Blog</a><a href="../../#pricing">Planos</a></div>
+  <div class="fcopy">© 2025 Gaveta</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O que é orçamento por envelope — Gaveta Blog</title>
+<meta name="description" content="A maioria das pessoas sabe quanto ganha. O problema é que não sabe para onde o dinheiro vai. O método de envelope resolve exatamente isso.">
+<link rel="canonical" href="https://gaveta.app/blog/o-que-e-orcamento-por-envelope/">
+<style>
+:root{
+  --bl:#0047C0;--bl2:#0038A0;--ok:#00E5A0;
+  --bg:#09090B;--bg2:#111113;--bg3:#18181B;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --t1:#FAFAFA;--t2:#A1A1AA;--t3:#52525B;
+  --nav-bg:rgba(9,9,11,0.88);
+}
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#F4F3F0;--bg2:#ECEAE6;--bg3:#FFFFFF;
+    --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.14);
+    --t1:#0D0D0D;--t2:#555550;--t3:#999890;
+    --nav-bg:rgba(244,243,240,0.88);
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none}
+.logo span{color:var(--bl)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}
+.nav-link:hover{color:var(--t1)}
+.nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background .15s}
+.nav-btn:hover{background:var(--bl2)}
+
+.post-wrap{max-width:720px;margin:0 auto;padding:72px 6% 96px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t3);margin-bottom:48px}
+.breadcrumb a{color:var(--t3);text-decoration:none}
+.breadcrumb a:hover{color:var(--t2)}
+.breadcrumb span{color:var(--t3)}
+.post-cat{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:block}
+.post-wrap h1{font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--t1);margin-bottom:32px}
+.post-lead{font-size:20px;color:var(--t2);line-height:1.75;font-weight:300;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.post-body{font-size:18px;color:var(--t2);line-height:1.8;font-weight:300}
+.post-body h2{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin:48px 0 16px;line-height:1.25}
+.post-body p{margin-bottom:24px}
+.post-body strong{color:var(--t1);font-weight:500}
+.post-body ul,.post-body ol{margin:0 0 24px 0;padding-left:0;list-style:none}
+.post-body li{padding:8px 0 8px 24px;border-bottom:1px solid var(--border);position:relative;font-size:17px}
+.post-body li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:2px;background:var(--bl)}
+.budget-table{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:28px;margin:32px 0}
+.budget-table h3{font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:20px}
+.budget-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:17px}
+.budget-row:last-child{border-bottom:none;font-weight:500;color:var(--t1);padding-top:16px;margin-top:4px}
+.budget-row-label{color:var(--t2)}
+.budget-row-value{color:var(--t1);font-weight:500;font-variant-numeric:tabular-nums}
+.budget-row:last-child .budget-row-value{color:var(--bl)}
+.callout{border:1px solid rgba(0,71,192,0.3);background:rgba(0,71,192,0.08);border-radius:16px;padding:24px 28px;margin:32px 0}
+.callout p{margin-bottom:0;color:var(--t1)}
+.post-cta{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:64px;text-align:center}
+.post-cta h3{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;margin-bottom:12px}
+.post-cta p{font-size:17px;color:var(--t2);font-weight:300;margin-bottom:28px}
+.post-cta a{background:var(--bl);color:white;padding:14px 28px;border-radius:100px;font-size:17px;font-weight:500;text-decoration:none;display:inline-block;transition:background .15s}
+.post-cta a:hover{background:var(--bl2)}
+.nav-posts{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
+.nav-post{text-decoration:none;flex:1;padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;transition:border-color .2s}
+.nav-post:hover{border-color:rgba(0,71,192,0.4)}
+.nav-post-label{font-size:12px;color:var(--t3);margin-bottom:6px;display:block}
+.nav-post-title{font-size:15px;font-weight:500;color:var(--t1);line-height:1.4}
+.nav-post.next{text-align:right}
+
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between}
+.fl{font-size:20px;font-weight:700;color:var(--t3)}
+.fl span{color:var(--bl)}
+.flinks{display:flex;gap:24px}
+.flinks a{font-size:17px;color:var(--t3);text-decoration:none}
+.flinks a:hover{color:var(--t2)}
+.fcopy{font-size:16px;color:var(--t3)}
+@media(max-width:768px){.nav-link{display:none}footer{flex-direction:column;gap:16px;text-align:center}.nav-posts{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="logo">Gaveta<span>.</span></a>
+  <div class="nav-r">
+    <a href="../../#como-funciona" class="nav-link">Como funciona</a>
+    <a href="../../#diferenca" class="nav-link">Diferenciais</a>
+    <a href="../../#pricing" class="nav-link">Planos</a>
+    <a href="../" class="nav-link">Blog</a>
+    <a href="../../" class="nav-btn">Testar beta</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <div class="breadcrumb">
+    <a href="../../">Gaveta</a>
+    <span>›</span>
+    <a href="../">Blog</a>
+    <span>›</span>
+    <span>O que é orçamento por envelope</span>
+  </div>
+
+  <span class="post-cat">Fundamentos</span>
+  <h1>O que é orçamento por envelope — e por que ele funciona</h1>
+  <p class="post-lead">A maioria das pessoas sabe quanto ganha. O problema é que não sabe para onde o dinheiro vai. Ao final do mês, o saldo está menor do que o esperado, mas é difícil apontar exatamente o motivo. Essa é a armadilha do orçamento reativo: você só descobre o problema depois que ele aconteceu.</p>
+
+  <div class="post-body">
+
+    <p>O orçamento por envelope propõe o caminho contrário. Em vez de registrar o que foi gasto, você decide antecipadamente onde cada real vai ser usado — antes de gastar.</p>
+
+    <h2>A lógica por trás do método</h2>
+    <p>A ideia vem de um hábito antigo: separar o dinheiro físico em envelopes, um para cada categoria de gasto. Um envelope para o aluguel, outro para a alimentação, outro para o transporte. Quando o dinheiro de um envelope acaba, acabou. Não há mais dinheiro disponível para aquela categoria no mês.</p>
+    <p>No mundo digital, o envelope físico vira uma categoria no app — uma gaveta. Mas a lógica é a mesma: você aloca o dinheiro antes de gastar, não depois.</p>
+
+    <h2>Um exemplo prático</h2>
+    <p>Suponha que você receba R$ 5.000 no dia 5 de cada mês. Com o orçamento por envelope, a primeira coisa que você faz ao receber o salário é distribuir esse valor entre suas gavetas:</p>
+
+    <div class="budget-table">
+      <h3>Exemplo de distribuição mensal</h3>
+      <div class="budget-row"><span class="budget-row-label">Moradia</span><span class="budget-row-value">R$ 1.500</span></div>
+      <div class="budget-row"><span class="budget-row-label">Alimentação</span><span class="budget-row-value">R$ 900</span></div>
+      <div class="budget-row"><span class="budget-row-label">Transporte</span><span class="budget-row-value">R$ 400</span></div>
+      <div class="budget-row"><span class="budget-row-label">Saúde</span><span class="budget-row-value">R$ 300</span></div>
+      <div class="budget-row"><span class="budget-row-label">Lazer</span><span class="budget-row-value">R$ 300</span></div>
+      <div class="budget-row"><span class="budget-row-label">Reserva de emergência</span><span class="budget-row-value">R$ 600</span></div>
+      <div class="budget-row"><span class="budget-row-label">Outros</span><span class="budget-row-value">R$ 1.000</span></div>
+      <div class="budget-row"><span class="budget-row-label">Total</span><span class="budget-row-value">R$ 5.000</span></div>
+    </div>
+
+    <p>A partir daí, cada gasto é descontado da gaveta correspondente. Quando você vai ao mercado e gasta R$ 180, a gaveta de alimentação passa a ter R$ 720. Você vê em tempo real quanto ainda pode gastar em cada categoria.</p>
+
+    <h2>Por que isso muda o comportamento</h2>
+    <p>O orçamento por envelope funciona porque torna o limite <strong>concreto e visível</strong>. Com uma conta bancária comum, você vê um saldo total — e é fácil ignorar que parte dele já está comprometida com o aluguel do próximo mês ou com parcelas pendentes. Com as gavetas, não há como ignorar: cada categoria tem seu espaço definido.</p>
+    <p>Outro efeito importante é que as decisões de gasto ficam mais conscientes. Antes de comprar algo, você consulta a gaveta. Se o dinheiro está lá, você gasta com tranquilidade. Se não está, você decide se vale mover dinheiro de outra gaveta — e essa decisão explícita é o que dá controle de verdade.</p>
+
+    <div class="callout">
+      <p><strong>A diferença fundamental:</strong> o orçamento reativo registra o passado. O orçamento por envelope planeja o futuro. Você deixa de ser surpreendido pelo extrato e passa a governar o seu dinheiro.</p>
+    </div>
+
+    <h2>Como o Gaveta aplica esse método</h2>
+    <p>O Gaveta foi construído em torno desse modelo, com adaptações para a realidade brasileira. Você aloca sua renda entre gavetas, registra transações e acompanha o saldo de cada categoria em tempo real.</p>
+    <p>O app também entende parcelamento — uma das formas de gasto mais comuns no Brasil — distribuindo automaticamente as parcelas nos meses corretos, sem que você precise fazer isso manualmente.</p>
+
+  </div>
+
+  <div class="post-cta">
+    <h3>Coloque em prática</h3>
+    <p>O Gaveta está em beta. Seja um dos primeiros a testar — e ganhe 1 ano de Pro grátis.</p>
+    <a href="../../">Quero testar o Gaveta</a>
+  </div>
+
+  <div class="nav-posts">
+    <div></div>
+    <a href="../como-definir-suas-gavetas/" class="nav-post next">
+      <span class="nav-post-label">Próximo →</span>
+      <div class="nav-post-title">Como definir suas gavetas</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">Gaveta<span>.</span></div>
+  <div class="flinks">
+    <a href="../../">Home</a>
+    <a href="../">Blog</a>
+    <a href="../../#pricing">Planos</a>
+  </div>
+  <div class="fcopy">© 2025 Gaveta</div>
+</footer>
+
+</body>
+</html>

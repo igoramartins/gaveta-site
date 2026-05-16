@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Gaveta</title>
+<meta name="description" content="Aprenda a controlar seu dinheiro com o método de orçamento por envelope, adaptado para a realidade brasileira.">
+<link rel="canonical" href="https://gaveta.app/blog/">
+<meta property="og:title" content="Blog — Gaveta">
+<meta property="og:description" content="Aprenda a controlar seu dinheiro com o método de orçamento por envelope.">
+<meta property="og:url" content="https://gaveta.app/blog/">
+<meta property="og:type" content="website">
+<style>
+@font-face {
+  font-family: 'Satoshi';
+  src: url('data:font/woff2;base64,') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+:root{
+  --bl:#0047C0;--bl2:#0038A0;--ok:#00E5A0;--warn:#FFBB00;--bad:#FF3B5C;
+  --bg:#09090B;--bg2:#111113;--bg3:#18181B;--bg4:#1C1C1F;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --t1:#FAFAFA;--t2:#A1A1AA;--t3:#52525B;
+  --nav-bg:rgba(9,9,11,0.88);
+  --shadow:0 40px 80px rgba(0,0,0,0.6);
+}
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#F4F3F0;--bg2:#ECEAE6;--bg3:#FFFFFF;--bg4:#F0EEE9;
+    --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.14);
+    --t1:#0D0D0D;--t2:#555550;--t3:#999890;
+    --nav-bg:rgba(244,243,240,0.88);
+    --shadow:0 40px 80px rgba(0,0,0,0.15);
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo span{color:var(--bl)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}
+.nav-link:hover,.nav-link.active{color:var(--t1)}
+.nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background .15s}
+.nav-btn:hover{background:var(--bl2)}
+
+.blog-hero{padding:80px 6% 60px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.blog-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,71,192,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,71,192,0.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 100% 100% at 50% 0%,black 0%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 100% 100% at 50% 0%,black 0%,transparent 100%)}
+.blog-hero-inner{position:relative;z-index:1;max-width:720px}
+.blog-label{font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--bl);margin-bottom:20px;display:block}
+.blog-hero h1{font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;color:var(--t1);margin-bottom:16px}
+.blog-hero p{font-size:20px;color:var(--t2);line-height:1.7;font-weight:300;max-width:520px}
+
+.blog-body{padding:64px 6%;max-width:1200px;margin:0 auto}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.post-card{background:var(--bg3);border:1px solid var(--border);border-radius:20px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:rgba(0,71,192,0.4);transform:translateY(-2px)}
+.post-card-accent{height:4px;background:var(--bl)}
+.post-card-body{padding:28px;flex:1;display:flex;flex-direction:column}
+.post-cat{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--bl);margin-bottom:14px;display:block}
+.post-card-body h2{font-size:21px;font-weight:700;color:var(--t1);letter-spacing:-0.4px;line-height:1.3;margin-bottom:12px}
+.post-card-body p{font-size:16px;color:var(--t2);line-height:1.7;font-weight:300;flex:1}
+.post-card-footer{padding:20px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.post-date{font-size:14px;color:var(--t3)}
+.post-readmore{font-size:14px;font-weight:500;color:var(--bl);display:flex;align-items:center;gap:4px}
+.post-readmore svg{transition:transform .2s}
+.post-card:hover .post-readmore svg{transform:translateX(3px)}
+
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between}
+.fl{font-size:20px;font-weight:700;color:var(--t3)}
+.fl span{color:var(--bl)}
+.flinks{display:flex;gap:24px}
+.flinks a{font-size:17px;color:var(--t3);text-decoration:none}
+.flinks a:hover{color:var(--t2)}
+.fcopy{font-size:16px;color:var(--t3)}
+@media(max-width:900px){
+  .posts-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:16px;text-align:center}
+  .nav-link{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="logo">Gaveta<span>.</span></a>
+  <div class="nav-r">
+    <a href="../#como-funciona" class="nav-link">Como funciona</a>
+    <a href="../#diferenca" class="nav-link">Diferenciais</a>
+    <a href="../#pricing" class="nav-link">Planos</a>
+    <a href="./" class="nav-link active">Blog</a>
+    <a href="../#" onclick="window.location='../#'" class="nav-btn">Testar beta</a>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-grid"></div>
+  <div class="blog-hero-inner">
+    <span class="blog-label">Blog do Gaveta</span>
+    <h1>Controle financeiro<br>na prática</h1>
+    <p>Guias diretos sobre orçamento por envelope, parcelamento e como tomar decisões financeiras mais conscientes — feitos para a realidade brasileira.</p>
+  </div>
+</div>
+
+<div class="blog-body">
+  <div class="posts-grid">
+
+    <a href="o-que-e-orcamento-por-envelope/" class="post-card">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <span class="post-cat">Fundamentos</span>
+        <h2>O que é orçamento por envelope — e por que ele funciona</h2>
+        <p>A maioria das pessoas sabe quanto ganha. O problema é que não sabe para onde o dinheiro vai. O método de envelope resolve exatamente isso.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Método</span>
+        <span class="post-readmore">Ler <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="como-definir-suas-gavetas/" class="post-card">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <span class="post-cat">Configuração</span>
+        <h2>Como definir suas gavetas</h2>
+        <p>Criar gavetas é a parte mais pessoal do orçamento. Não existe uma lista certa para todo mundo — mas existe uma lógica para montar a sua.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Prático</span>
+        <span class="post-readmore">Ler <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="como-lidar-com-gastos-variaveis/" class="post-card">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <span class="post-cat">Gestão</span>
+        <h2>Como lidar com gastos variáveis</h2>
+        <p>Gastos fixos são fáceis de planejar. O desafio real do orçamento por envelope está nos gastos variáveis — aqueles que mudam todo mês.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Prático</span>
+        <span class="post-readmore">Ler <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="parcelamento-no-orcamento-por-envelope/" class="post-card">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <span class="post-cat">Parcelamento</span>
+        <h2>Parcelamento no orçamento por envelope</h2>
+        <p>O parcelamento é uma das formas de consumo mais comuns no Brasil — e uma das que mais confunde na hora de fazer orçamento.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Brasil</span>
+        <span class="post-readmore">Ler <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="gastos-irregulares-e-como-se-preparar/" class="post-card">
+      <div class="post-card-accent"></div>
+      <div class="post-card-body">
+        <span class="post-cat">Planejamento</span>
+        <h2>Gastos irregulares e como se preparar para eles</h2>
+        <p>IPVA, IPTU, revisão do carro, presente de casamento. Esses gastos raramente são surpresa — o problema é que o dinheiro nunca está separado.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Estratégia</span>
+        <span class="post-readmore">Ler <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="fl">Gaveta<span>.</span></div>
+  <div class="flinks">
+    <a href="../">Home</a>
+    <a href="./">Blog</a>
+    <a href="../#pricing">Planos</a>
+  </div>
+  <div class="fcopy">© 2025 Gaveta</div>
+</footer>
+
+</body>
+</html>

@@ -29,7 +29,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);overflo
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
 .logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo img{width:28px;height:28px;object-fit:contain;border-radius:7px}
-.logo span{color:var(--bl)}
+.logo-dot{color:var(--bl)}
 .nav-r{display:flex;align-items:center;gap:8px}
 .nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}
 .nav-link:hover,.nav-link.active{color:var(--t1)}
@@ -75,7 +75,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;d
 <body>
 
 <nav>
-  <a href="../" class="logo"><img src="/favicon.png" alt="">Gaveta<span>.</span></a>
+  <a href="../" class="logo"><img src="/favicon.png" alt=""><span>gaveta<span class="logo-dot">.</span></span></a>
   <div class="nav-r">
     <a href="../#como-funciona" class="nav-link">Como funciona</a>
     <a href="../#diferenca" class="nav-link">Diferenciais</a>

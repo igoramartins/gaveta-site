@@ -69,7 +69,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;d
   .posts-grid{grid-template-columns:1fr}
   footer{flex-direction:column;gap:16px;text-align:center}
   .nav-link{display:none}
+  .menu-btn{display:flex}
+  .mobile-menu{display:none;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);padding:12px 6% 20px;z-index:99;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-size:18px;color:var(--t2);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .mobile-menu a:last-child{border-bottom:none;margin-top:4px}
+  .mobile-menu .mobile-cta{background:var(--bl);color:white;border-radius:100px;padding:13px 20px;text-align:center;font-weight:500;border-bottom:none!important}
 }
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;color:var(--t1);align-items:center;justify-content:center}
 </style>
 </head>
 <body>
@@ -82,8 +89,20 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;d
     <a href="../#pricing" class="nav-link">Planos</a>
     <a href="./" class="nav-link active">Blog</a>
     <a href="../#" onclick="window.location='../#'" class="nav-btn">Testar beta</a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../#como-funciona" onclick="closeMenu()">Como funciona</a>
+  <a href="../#diferenca" onclick="closeMenu()">Diferenciais</a>
+  <a href="../#pricing" onclick="closeMenu()">Planos</a>
+  <a href="./" onclick="closeMenu()">Blog</a>
+  <a href="../" class="mobile-cta" onclick="closeMenu()">Testar beta</a>
+</div>
 
 <div class="blog-hero">
   <div class="blog-hero-grid"></div>
@@ -174,6 +193,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;d
   </div>
   <div class="fcopy">© 2025 Gaveta</div>
 </footer>
-
+<script>
+function toggleMenu(){var m=document.getElementById('mobile-menu');m.classList.toggle('open');}
+function closeMenu(){document.getElementById('mobile-menu').classList.remove('open');}
+</script>
 </body>
 </html>

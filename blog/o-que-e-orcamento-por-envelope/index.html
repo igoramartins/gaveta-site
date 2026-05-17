@@ -22,7 +22,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;line-height:1.6}
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px)}
-.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none}
+.logo{font-size:24px;font-weight:700;color:var(--t1);letter-spacing:-0.5px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{width:28px;height:28px;object-fit:contain;border-radius:7px}
 .logo span{color:var(--bl)}
 .nav-r{display:flex;align-items:center;gap:8px}
 .nav-link{font-size:17px;color:var(--t2);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color .15s}
@@ -30,7 +31,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;h
 .nav-btn{background:var(--bl);color:white;font-size:17px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background .15s}
 .nav-btn:hover{background:var(--bl2)}
 
-.post-wrap{max-width:720px;margin:0 auto;padding:72px 6% 96px}
+.post-wrap{max-width:860px;margin:0 auto;padding:72px 6% 96px}
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t3);margin-bottom:48px}
 .breadcrumb a{color:var(--t3);text-decoration:none}
 .breadcrumb a:hover{color:var(--t2)}
@@ -79,7 +80,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6%;d
 <body>
 
 <nav>
-  <a href="../../" class="logo">Gaveta<span>.</span></a>
+  <a href="../../" class="logo"><img src="/favicon.png" alt="">Gaveta<span>.</span></a>
   <div class="nav-r">
     <a href="../../#como-funciona" class="nav-link">Como funciona</a>
     <a href="../../#diferenca" class="nav-link">Diferenciais</a>
